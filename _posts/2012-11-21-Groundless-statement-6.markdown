@@ -7,7 +7,7 @@ author:     "Small Star"
 header-img: "img/post-bg-liu.jpg"
 tags:
     - 无稽之谈
-	- 诗
+    - 诗
 
 ---
 
