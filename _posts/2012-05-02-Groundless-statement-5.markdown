@@ -7,7 +7,7 @@ author:     "Small Star"
 header-img: "img/post-bg-wu.jpg"
 tags:
     - 无稽之谈
-	- 旅游
+    - 旅游
 
 ---
 
