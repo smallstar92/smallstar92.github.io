@@ -7,7 +7,8 @@ author:     "Small Star"
 header-img: "img/post-bg-shier.jpg"
 tags:
     - 无稽之谈
-
+    - 小城
+    
 ---
 
 　　有时候，小城是一种寄托；有时候，小城是一个梦想；有时候，你早已生活在小城里。
