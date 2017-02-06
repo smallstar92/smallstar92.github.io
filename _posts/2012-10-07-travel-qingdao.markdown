@@ -7,7 +7,7 @@ author:     "Small Star"
 header-img: "img/qingdao/post-bg-qingdao.jpg"
 tags:
     - 青岛
-	- 旅游
+    - 旅游
 
 ---
 
