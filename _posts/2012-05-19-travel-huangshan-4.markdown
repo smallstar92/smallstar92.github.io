@@ -7,7 +7,7 @@ author:     "Small Star"
 header-img: "img/huangshan/post-bg-huangshan4.jpg"
 tags:
     - 黄山
-	- 旅游
+    - 旅游
 
 ---
 
