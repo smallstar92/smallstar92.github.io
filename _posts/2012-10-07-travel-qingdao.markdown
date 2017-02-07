@@ -4,7 +4,7 @@ title:      "《游记-青岛》"
 subtitle:   "面朝大海，天昏地暗"
 date:       2012-10-07 12:00:00
 author:     "Small Star"
-header-img: "img/qingdao/post-bg-qingdao.jpg"
+header-img: "img/qingdao/post-bg-qingdao2.jpg"
 tags:
     - 青岛
     - 旅游
