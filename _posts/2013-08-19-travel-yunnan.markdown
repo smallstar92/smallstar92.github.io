@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "《游记-云南》"
-subtitle:   "面朝大海，天昏地暗"
+subtitle:   ""
 date:       2013-08-19 12:00:00
 author:     "Small Star"
 header-img: "img/yunnan/post-bg-yunnan.jpg"
