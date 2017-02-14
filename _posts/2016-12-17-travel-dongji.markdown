@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "《游记，东极》"
-subtitle:   "凤凰，武当，宏村，婺源"
+subtitle:   ""
 date:       2016-12-17 12:00:00
 author:     "Small Star"
 header-img: "img/dongji/post-bg-dongji.jpg"
