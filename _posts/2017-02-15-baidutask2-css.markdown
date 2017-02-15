@@ -4,7 +4,7 @@ title:      "html5标签语义化及表单居中对齐"
 subtitle:   "百度前端技术学院2016task1-2"
 date:       2016-12-17 12:00:00
 author:     "Small Star"
-header-img: "img/dongji/post-bg-dongji.jpg"
+header-img: "img/baidutask2016/post-bg-html5.jpg"
 tags:
     - 百度前端技术学院2016
     - html5
