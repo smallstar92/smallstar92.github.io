@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "html5标签语义化及表单居中对齐"
-subtitle:   "百度前端技术学院2016task1-2"
+subtitle:   "百度前端技术学院2016task1-2-1"
 date:       2017-02-15 12:00:00
 author:     "Small Star"
 header-img: "img/baidutask2016/post-bg-html5.jpg"
