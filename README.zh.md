@@ -1,7 +1,3 @@
-# Hux blog 模板
-
-### [我的博客在这里 &rarr;](http://huxpro.github.io)
-
 
 ### 关于收到"Page Build Warning"的email
 
@@ -26,8 +22,6 @@
 ```
 $ git clone git@github.com:Huxpro/huxblog-boilerplate.git
 ```
-
-**[在这里预览模板 &rarr;](http://huangxuan.me/huxblog-boilerplate/)**
 
 ## 各版本特性
 
@@ -115,9 +109,6 @@ tags:
 
 #### SideBar
 
-看右边:
-![](http://huangxuan.me/img/blog-sidebar.jpg)
-
 设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
 ```
 # Sidebar settings
@@ -171,10 +162,6 @@ friends: [
 
 
 #### Keynote Layout
-
-HTML5幻灯片的排版：
-
-![](http://huangxuan.me/img/blog-keynote.jpg)
 
 这部分是用于占用html格式的幻灯片的，一般用到的是 Reveal.js, Impress.js, Slides, Prezi 等等.我认为一个现代化的博客怎么能少了放html幻灯的功能呢~
 
@@ -234,8 +221,6 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 #### Header Image
 
-标题底图是可以自己选的，看看几篇示例post你就知道如何设置了。在
-  [issue #6 ](https://github.com/Huxpro/huxpro.github.io/issues/6) 中我被问到：怎么样才能让标题底图好看呢？
   
 标题底图的选取完全是看个人的审美了，我也帮不了你。每一篇文章可以有不同的底图，你想放什么就放什么，最后宽度要够，大小不要太大，否则加载慢啊。
 
@@ -246,13 +231,5 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 我的博客标题是 **“Hux Blog”** 但是我想要在搜索的时候显示 **“黄玄的博客 | Hux Blog”** ，这个就需要SEO Title来定义了。
 
 其实这个SEO Title就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
-
-## 致谢
-
-1. 这个模板是从这里[IronSummitMedia/startbootstrap-clean-blog-jekyll](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)  fork 的。 感谢这个作者
-2. 感谢[@BrucZhaoR](https://github.com/BruceZhaoR)的中文翻译 
-
-3. 感谢 Jekyll、Github Pages 和 Bootstrap!
-
 
 
