@@ -114,12 +114,12 @@ right层的margin-left值使用的就是像素值，此时可以直接用margin-
 
 ![](/img/baidutask2016/post-task3-xiaoguo2.jpg)
 
-　　使用圣杯和双飞翼完成布局的代码地址：https://github.com/smallstar92/baidutask/tree/gh-pages/task3;
+　　使用圣杯和双飞翼完成布局的代码地址：https://github.com/smallstar92/baidutask-2016/tree/gh-pages/task3;
 
 　　demo效果网页：
 
-1.圣杯：http://smallstarz.com/baidutask/task3/shengbei/task_1_3_1.html；<br/>
-2.双飞翼：http://smallstarz.com/baidutask/task3/shuangfeiyi/task_1_3_1.html；
+1.圣杯：http://smallstarz.com/baidutask-2016/task3/shengbei/task_1_3_1.html；<br/>
+2.双飞翼：http://smallstarz.com/baidutask-2016/task3/shuangfeiyi/task_1_3_1.html；
 
 　　参考文章，第1篇为w3c中文章，第2篇为w3cplus文章，相对来说对box-sizing的解释要详尽许多：
 
