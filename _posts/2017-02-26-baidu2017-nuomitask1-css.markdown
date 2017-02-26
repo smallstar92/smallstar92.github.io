@@ -290,7 +290,7 @@ a元素回到正常位置（top:0），文字不再透明（opacity:1）。属�
 4.“边框扩展”：在任务的网页下方有在线参考资料，其中有Codrops的链接，Codrops网站的第二项“Inspiration for Line Menu Styles”就是
 各种按钮效果的展示，其中就有边框扩展。作为github上的开源项目，可直接fork下载项目源码，进行研究学习。
 边框扩展是其中一个叫ariel的高手做的。需要注意的是，这个项目中各类按钮的状态变化是鼠标悬浮、鼠标点击按钮和鼠标点击其他按钮三种，
-其中点击事件使用了js代码，效果的展现全是使用的css3属性。<br/>
+其中点击事件使用了js代码，效果的展现全是使用的css3属性。(https://tympanus.net/codrops/category/playground/page/2/)<br/>
 
 ![](/img/baidutask2017/post-nuomitask1-ariel.jpg)
 
