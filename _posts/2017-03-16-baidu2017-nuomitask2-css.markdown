@@ -20,13 +20,13 @@ tags:
 
 　　任务分解：该任务要达到的[效果](http://ife.baidu.com/course/detail/id/36)。如网页中显示情况，可将任务分解为两个小任务：
 
-1.制作四分之三圆环并旋转；
+1.制作四分之三圆环并旋转；<br>
 2.制作圆饼，圆饼内有两种颜色，分别交替旋转扩大其扇形区域（从0deg到到360deg），以达到圆饼loading效果。
 
 　　通过完成任务，使用到如下一些重要属性：
 
-1.制作圆环，使用伪元素，使用border(包括其transparent值)；
-2.制作圆饼过程中，使用到animation-timing-function属性的steps()曲线；
+1.制作圆环，使用伪元素，使用border(包括其transparent值)；<br>
+2.制作圆饼过程中，使用到animation-timing-function属性的steps()曲线；<br>
 3.圆饼及圆环的旋转，使用animation系列属性，并使用transform设置旋转角度，使用transform-origin属性设置旋转中心。
 
 　　以下是完成本任务后的html结构：
@@ -75,7 +75,7 @@ tags:
 
 　　圆环及圆饼制作原理如下：
 
-　　1.四分之三圆环的旋转：
+　　1.四分之三圆环的旋转：<br>
 　　实现原理：首先将上文html结构中的类名为bgcircle的span元素设置为圆形（将其border-radius设置为50%即可），其宽高大于两个子元素span，
 以便圆环与圆饼分开。在.bgcircle上设置伪元素，同样设置为圆形，大小与.bgcircle相同，再设置伪元素边框，其中任一边框设置为transparent即可。
 最后利用animotion和transform设置旋转动画。css代码如下：
@@ -118,7 +118,7 @@ tags:
 	  100%{-webkit-transform:rotate(-360deg);}
 	}
 
-　　2.圆饼旋转：
+　　2.圆饼旋转：<br>
 　　（1）方法一：主要参考[codepen](http://codepen.io/)网站中[Geoffrey Crofte](http://codepen.io/CreativeJuiz/)的
 [CSS Loader](http://codepen.io/CreativeJuiz/pen/vFBIh)demo，其中也写了一些其他loading效果。
 总体来说，这些loading效果的主要原理都是：在.bgcircle之下，设置.left、.right为左右半圆，拼接为一个圆饼，
@@ -181,12 +181,12 @@ css代码过长，请见文末demo代码地址，其旋转过程如下步骤表�
 　　思考：
 
 1.利用steps()曲线，可以制作一些更炫酷的css3动画。并且，在同一个方向上连续渐变的动画，由于渐变位置不同，
-通常需要两个以上元素实现，但利用steps()曲线突变位置，就能通过一个元素实现了；
-2.完成以上任务之后，可以优化的地方：第一个方法中的.spining子元素，可以使用伪元素替代；同理，第二个方法中的子元素，也可用伪元素替代；
+通常需要两个以上元素实现，但利用steps()曲线突变位置，就能通过一个元素实现了；<br>
+2.完成以上任务之后，可以优化的地方：第一个方法中的.spining子元素，可以使用伪元素替代；同理，第二个方法中的子元素，也可用伪元素替代；<br>
 3.圆环除了定长旋转，也可根据圆饼loading旋转的方法，实现变长旋转loading效果。
 
 　　具体参考已在文中引出，不再单列，以下为我的demo及demo代码：
 
-　　[我的demo](http://smallstarz.com/baidutask-2017/nuomi-task2-loadingcircle/loadingcircle.html);
+　　[我的demo](http://smallstarz.com/baidutask-2017/nuomi-task2-loadingcircle/loadingcircle.html);<br>
 　　[demo代码](https://github.com/smallstar92/baidutask-2017/tree/gh-pages/nuomi-task2-loadingcircle);
 
