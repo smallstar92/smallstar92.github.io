@@ -18,7 +18,7 @@ tags:
 　　《CSS3圆饼loading效果》作为糯米学院中的进阶任务，目的主要是让学员通过完成任务，掌握border-radius属性的使用以及旋转动画的设置。
 在已经完成鼠标悬浮效果任务之后，相对来说本任务要简单很多。以下是总结。
 
-　　任务分解：该任务要达到的![效果](http://ife.baidu.com/course/detail/id/36)。如网页中显示情况，可将任务分解为两个小任务：
+　　任务分解：该任务要达到的[效果](http://ife.baidu.com/course/detail/id/36)。如网页中显示情况，可将任务分解为两个小任务：
 
 1.制作四分之三圆环并旋转；
 2.制作圆饼，圆饼内有两种颜色，分别交替旋转扩大其扇形区域（从0deg到到360deg），以达到圆饼loading效果。
@@ -119,8 +119,8 @@ tags:
 	}
 
 　　2.圆饼旋转：
-　　（1）方法一：主要参考![codepen](http://codepen.io/)网站中![Geoffrey Crofte](http://codepen.io/CreativeJuiz/)的
-![CSS Loader](http://codepen.io/CreativeJuiz/pen/vFBIh)demo，其中也写了一些其他loading效果。
+　　（1）方法一：主要参考[codepen](http://codepen.io/)网站中[Geoffrey Crofte](http://codepen.io/CreativeJuiz/)的
+[CSS Loader](http://codepen.io/CreativeJuiz/pen/vFBIh)demo，其中也写了一些其他loading效果。
 总体来说，这些loading效果的主要原理都是：在.bgcircle之下，设置.left、.right为左右半圆，拼接为一个圆饼，
 对.left，设置其子元素.spining往右移至.right区域，并形成半圆与.right区域重叠，此时只有.spining旋转至.left区域时才能显示出来。
 同理，设置了.right的子元素.spining。最后，对两个.spining子元素设置不同的旋转动画已达到要求效果。
@@ -147,7 +147,7 @@ css代码过长，请见文末demo代码地址，其旋转过程如下步骤表�
 
 ![](/img/baidutask2017/post-nuomitask2-5.jpg)
 
-　　（2）方法二：参考![张鑫旭博客](http://www.zhangxinxu.com/)的文章![CSS3实现鸡蛋饼饼状图loading等待转转转](http://www.zhangxinxu.com/wordpress/2014/04/css3-pie-loading-waiting-animation/)，
+　　（2）方法二：参考[张鑫旭博客](http://www.zhangxinxu.com/)的文章[CSS3实现鸡蛋饼饼状图loading等待转转转](http://www.zhangxinxu.com/wordpress/2014/04/css3-pie-loading-waiting-animation/)，
 在张鑫旭前辈的这篇文章里，利用比喻把他的方法原理表述的很清楚，简单来说：他将动画分成了两半，如果以本文前面页面图中右边的圆饼作为例子的话，
 前半动画是深蓝色由12点钟位置开始逆时针旋转至-360deg，最后将橙色覆盖；后半动画刚好相反，橙色由12点钟位置开始逆时针旋转至-360deg，最后将深蓝色覆盖。
 由于两半部分动画的过程是相同的，所以将前半部分动画制作完成后，将该动画过程复制一份，将颜色对调，重新套入相同结构的新元素中，再将新的一套重叠在
@@ -187,6 +187,6 @@ css代码过长，请见文末demo代码地址，其旋转过程如下步骤表�
 
 　　具体参考已在文中引出，不再单列，以下为我的demo及demo代码：
 
-　　![我的demo](http://smallstarz.com/baidutask-2017/nuomi-task2-loadingcircle/loadingcircle.html);
-　　![demo代码](https://github.com/smallstar92/baidutask-2017/tree/gh-pages/nuomi-task2-loadingcircle);
+　　[我的demo](http://smallstarz.com/baidutask-2017/nuomi-task2-loadingcircle/loadingcircle.html);
+　　[demo代码](https://github.com/smallstar92/baidutask-2017/tree/gh-pages/nuomi-task2-loadingcircle);
 
