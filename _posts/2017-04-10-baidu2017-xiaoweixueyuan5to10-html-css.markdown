@@ -41,6 +41,7 @@ c.设置父元素为伸缩容器，并设置align-content:center。
 　　[demo](http://smallstarz.com/baidutask-2017/xiaoweixueyuan/task4/task_1_4_1.html);<br>
 　　[代码](https://github.com/smallstar92/baidutask-2017/tree/gh-pages/xiaoweixueyuan/task4);<br>
 　　
+ 
 　　*task6：《通过HTML及CSS模拟报纸排版》。本任务主要是各种字体大小颜色不同等的设置，以及涉及区块定位问题：*
 
 1.对于首字下沉效果：需要注意此时切记设置首字行高等于font-size，如果不设置，在某些浏览器中会实现首字下沉效果（如火狐），另一些则不会；<br>
