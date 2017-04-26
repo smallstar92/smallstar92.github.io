@@ -1,0 +1,62 @@
+---
+layout:     post
+title:      "百度前端技术学院2017flexbox学习"
+subtitle:   ""
+date:       2017-04-26 12:00:00
+author:     "Small Star"
+header-img: "img/baidutask2017/post-bg-css3.jpg"
+tags:
+    - 百度前端技术学院2017
+    - css
+
+---
+
+>百度前端技术学院2017已经结束，目前陆续将这段时间的一些总结整理出来。
+
+　　flex布局在网页布局中非常实用，尤其是在面对一些较为弹性的布局设置的时候，会有异常惊艳的表现。
+在目前流行的响应式布局观念里，面对大的项目，一般采用bootstrap的栅格化布局来应对，而对于一些小的项目，则完全可以采用flex布局。
+
+　　对flex布局的学习，我认为关键是抓住伸缩容器和伸缩项目这两个概念，围绕这两个概念，利用属性来改变两者之间的相对关系，既是flex布局。
+本文主要从基本术语、常用属性两方面进行梳理。
+
+　　基本术语：伸缩容器、伸缩项目；主轴、主轴方向、主轴起点、终点、主轴长度、主轴长度属性（同理有侧轴的一套基本术语）。
+下面一张图可以攘括这一套基本术语的概念（转自w3cplus，非常庆幸站在巨人的肩膀上，感谢前端领域大漠老师等众大牛）：
+
+![](/img/baidutask2017/post-flex.png)
+
+　　需要注意的是，flex的主侧轴并不是对应的元素width、height，主轴长度既可以是width值，也可以是height值，依据具体属性的设置而来。
+
+　　常用属性：我认为可以把属性归纳为两类来学习：一类写进伸缩容器里，一类写在伸缩项目里。
+
+　　写进伸缩容器内的属性：这些属性控制的主要都是伸缩项目在容器内的布局。
+
+1.最主要的属性，display:flex/inline-flex。将容器设置为伸缩容器；
+2.flex-flow：控制伸缩项目在容器内的伸缩流方向和行数；这个属性实则为flex-direction和flex-wrap的缩写：
+flex-driection：控制伸缩流方向，属性值有row（默认）、row-reverse、column、column-reverse，
+术语描述为主轴方向分别与文档书写方向平行或反向平行，主轴方向分别与块布局方向平行或反向平行，
+如果直白描述，可以简单当作从左至右/从右至左/从上到下/从下到上。
+flex-wrap：控制伸缩项目单行还是多行排列，属性值有nowrap（默认，单行），wrap（多行），wrap-reverse（多行，侧轴方向交换）。
+3.align-items：沿侧轴方向对齐方式，属性值有flex-start（伸缩项目沿着伸缩容器侧轴起点边对齐），flex-end（侧轴终点边对齐），
+center（同一行的伸缩项目沿着该行中线对齐），stretch（伸缩项目拉伸填充至同一高度），baseline（沿着伸缩项目文字基线对齐）。
+4.justify-content：沿主轴方向对齐。属性值有flex-start（伸缩项目从主轴起点开始往终点排列），flex-end（伸缩项目从主轴终点开始往起点排列），
+center（居中排列，如果伸缩项目设有margin，会有margin值间距），space-between（伸缩项目平均分布，且两侧项目靠近起终点），
+space-around（平均分布两侧会留出平均分配宽度一半的值）。
+5.align-content：（我的理解是，多行情况下，每一行作为一个大的伸缩项目，沿侧轴对齐方式，此时与justify-content的属性值作用原理相同），
+属性值有flex-start、flex-end、center、space-btween、space-around、stretch。
+
+　　写进伸缩项目内的属性：主要有两个，或者说四个，分别控制了项目出现的顺序和伸缩状态。
+
+1.order：在伸缩容器内，利用此属性，完全不依靠对html结构的改变，就可以改变伸缩项目的出现顺序。默认值都为0，值越高，越排在后面（整数值）。
+2.flex（实为flex-grow/flow=shrink/flex-basis这个属性缩写）。格式为flex:flex-grow flow=shrink flex-basis。其中：
+flex-grow：为伸缩项目所占的空间比例或者空间的伸长比例（正数），与伸缩项目数相关，也需要与flex-basis相配合才能准确定义。默认值为1（如果省略）。
+flex-basis：伸缩项目的初始长度，为带长度单位的值。如果为0（默认值），此时伸缩项目会按照flex-gorw所设置的值形成的比例来分配其所占伸缩容器的主轴长度。
+如果设置为auto，该伸缩项目的长度等于其宽度或高度属性值（取决于主轴方向），此时，当伸缩容器主轴的长度大于伸缩项目初始长度之和时，
+多出的长度会按照flex-grow值的比例来分配给各伸缩容器。
+flow=shrink：伸缩项目的收缩比例，当伸缩项目长度之和大于伸缩容器主轴长度时，多出来的长度按照这个值的比例平均分配给各伸缩项目进行收缩。（默认值为1）。
+此外，flex综合属性有两个特定值auto和initial。两者分别表示flex:1 1 auto；flex:0 1 auto。
+
+　　以上，是对flex学习后的理解。主要参考[Flexbox——快速布局神器](http://www.w3cplus.com/css3/flexbox-basics.html)。
+此外，自己在写demo过程中编写了一个简单的flex布局，通过在chrome浏览器里运行，利用开发者工具可以适时动态查看以上属性的差别。
+　　[demo](http://smallstarz.com/baidutask-2017/binbinxueyuan/task9/task_1_9_1.html);<br>
+
+
