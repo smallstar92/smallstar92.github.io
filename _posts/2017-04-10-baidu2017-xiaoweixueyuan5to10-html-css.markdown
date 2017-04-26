@@ -41,7 +41,11 @@ c.设置父元素为伸缩容器，并设置align-content:center。
 　　[demo](http://smallstarz.com/baidutask-2017/xiaoweixueyuan/task4/task_1_4_1.html);<br>
 　　[代码](https://github.com/smallstar92/baidutask-2017/tree/gh-pages/xiaoweixueyuan/task4);<br>
 
+<<<<<<< HEAD
 　　*task6：《通过HTML及CSS模拟报纸排版》。<br>本任务主要是各种字体大小颜色不同等的设置，以及涉及区块定位问题：*
+=======
+　　*task6：《通过HTML及CSS模拟报纸排版》。本任务主要是各种字体大小颜色不同等的设置，以及涉及区块定位问题：*
+>>>>>>> origin/master
 
 1.对于首字下沉效果：需要注意此时切记设置首字行高等于font-size，如果不设置，在某些浏览器中会实现首字下沉效果（如火狐），另一些则不会；<br>
 2.如果文本中含有url地址等内容，需对其设置word-wrap:break-word，强制自动换行，否则某些浏览器中会出现该文本溢出容器的情况；<br>
@@ -52,7 +56,11 @@ c.设置父元素为伸缩容器，并设置align-content:center。
 
 ![](/img/baidutask2017/post-xiaowei-1.png)
 
+<<<<<<< HEAD
 　　*task7：《实现常见的技术产品官网的页面架构及样式布局》。<br>本任务涉及了使用ps切图等一些ps基础技能，在完成任务的过程中，
+=======
+　　*task7：《实现常见的技术产品官网的页面架构及样式布局》。本任务涉及了使用ps切图等一些ps基础技能，在完成任务的过程中，
+>>>>>>> origin/master
 应该考虑到官网实际应该是怎样的，然后合理使用标签，增加一些psd图中不能看到的css效果：*
 
 1.对按钮能元素合理使用transition属性，使其效果平滑；<br>
@@ -67,7 +75,11 @@ c.设置父元素为伸缩容器，并设置align-content:center。
 
 ![](/img/baidutask2017/post-xiaowei-2.png)
 
+<<<<<<< HEAD
 　　*task8：《响应式网格（栅格化）布局》。<br>了解其原理及bootstrap栅格化布局原理：*
+=======
+　　*task8：《响应式网格（栅格化）布局》。了解其原理及bootstrap栅格化布局原理：*
+>>>>>>> origin/master
 
 1.响应式主要使用到了媒体查询，@media；<br>
 2.栅格化原理：将父容器宽度平均化为n等份，其下子元素按照多少等分来分配宽度（不能超过n），在对子元素浮动之后，子元素即会进行合理排列；<br>
@@ -76,9 +88,13 @@ c.设置父元素为伸缩容器，并设置align-content:center。
 如果还需在col-1-n层内部继续栅格化，此时就可将col-1-n直接看作该栅格的contain层，在其中加入row-2和col-2-n即可（padding和margin等值分别与最外的栅格布局相关层的值相等）。
 
 　　[demo](http://smallstarz.com/baidutask-2017/xiaoweixueyuan/task8/task_1_8_1.html);<br>
-　　[代码](https://github.com/smallstar92/baidutask-2017/tree/gh-pages/xiaoweixueyuan/task8);
+　　[代码](https://github.com/smallstar92/baidutask-2017/tree/gh-pages/xiaoweixueyuan/task8);<png>
 
+<<<<<<< HEAD
 　　*task9：《使用HTML/CSS实现一个复杂页面》。<br>对效果图实现像素级还原，通过该任务综合练习html/css的相关知识，个人认为涉及到这样一些东西：
+=======
+　　*task9：《使用HTML/CSS实现一个复杂页面》。对效果图实现像素级还原，通过该任务综合练习html/css的相关知识，个人认为涉及到这样一些东西：
+>>>>>>> origin/master
 table的复杂样式设置；栅格化布局；多个ul嵌套的下拉菜单（需要考虑代码复用）；form的复杂样式设定；选择器的合理使用；类名的科学设定；代码的复用性。
 下面几点是实际遇到的问题：*
 
