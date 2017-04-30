@@ -1,0 +1,136 @@
+---
+layout:     post
+title:      "《你不知道的javascript》上卷"
+subtitle:   "作用域与闭包（三）——闭包"
+date:       2017-04-30 12:00:00
+author:     "Small Star"
+header-img: "img/js/post-js.jpg"
+tags:
+    - 你不知道的javascript
+    - js
+
+---
+
+>在翻阅《你不知道的javascript》这一套书的中上卷目录之后，发现书中针对闭包、对象、原型、语法、异步、回调等等既基础又重要的
+javascript知识有着针对性的阐述，于是决定对这套书的中上卷进行学习。上卷和中卷各讲述了两大部分知识，分别是：作用域与闭包、
+this和对象原型、类型和语法、异步和性能。本文是对作用域与闭包的学习总结。
+
+　　闭包，一个非常神秘的词语，其实不光js中存在闭包的概念，在其他编程语言中也有。在《你不知道的javascript（上）》一书中，
+通过一些易懂的实例，很容易的就解释清楚闭包，以及它的主要作用。学习之后，我认为对闭包主要掌握三个要点：概念，实际用途，利用闭包来建立模块。
+
+　　1.闭包概念<br>
+　　正如书中所说，闭包在js中无处不在，其定义也直截了当：**当函数可以记住并访问所在的词法作用域时**，就产生了闭包，
+**即使函数是在当前词法作用域之外执行**。注意重点，第一句话阐述闭包的定义，根据js引擎按照作用域链向上查找的机制，
+函数内部嵌套的函数肯定会形成闭包，但是使一个闭包显得有意义的却是第二句话（当然闭包不只这一种作用）。<br>
+　　如下代码：<br>
+
+	function foo(){
+	  var a=2;
+	  function bar(){
+	    console.log(a);
+	  }
+	  return bar;
+	}
+	var baz = foo();
+	baz();//2
+
+　　在foo()函数中，bar()已经形成了一个闭包，通过return bar将bar返回给了全局作用域，而通过var声明将bar传递给了baz，
+于是，此时baz作为在全局作用域中的标识符，却能够访问foo作用域内的变量a，这就是闭包所起的作用。<br>
+　　再来看一个复杂的传参例子：<br>
+
+	function foo(){
+	var a=2;
+	function baz(){
+	  console.log(a);
+	}
+	  bar(baz);
+	}
+	function bar(fn){
+	  fn();
+	}
+
+　　在foo()函数中通过bar(baz)调用了外部函数bar(fn)，也就是将baz传给了外部函数bar(fn)，既fn=baz，因此在执行的时候，执行fn()也就是执行了一次
+baz()，于是，作为另一个函数中的fn()，就能够访问到foo()中的变量a，而这是baz()闭包所起的作用。
+
+　　2.闭包的作用<br>
+　　闭包所起的作用不只是能够在外部作用域中访问内部变量，在回调函数及循环语句中，主要也是闭包在起作用。同样，看一个书中提供的使用延时器的例子：<br>
+
+	function wait(message){
+	  setTimeout(function timer(){
+	    console.log(message);
+	  },1000);
+	}
+	wait("Hello,closure!")
+
+　　在调用wait("Hello,closure!")之后，延时器中的函数要在1000毫秒后执行，此时，按照正常的js垃圾收回机制，
+wait()的作用域及其中储存的变量值"Hello,closure!"应该在wait("Hello,closure!")执行几微秒后就被收回了，
+然后正是由于延时器中的函数timer()处于wait(message)函数内部，形成了闭包，使得timer()可以在1000毫秒后能够访问到变量值"Hello,closure!"。
+可见，闭包不仅能使外部访问函数作用域内的变量，还能使得函数作用域在一定时间内保持完整。<br>
+　　有时候（或者说经常），会在for循环内执行延时器，如果延时器要使用for循环的i变量（j或者其他也可以，总之就是循环按照其变化执行的那个变量），
+经常会出现所有延时器使用的都是最后一个i值的情况出现。对此，需要使用闭包和IIFE才能够很好的处理这个问题（IIFE指立即执行函数表达式）。
+如下代码：<br>
+
+	for (var i=1;i<=5;i++){
+	  setTimeout(function timer(){
+	    console.log(i);
+	  },i*1000);
+	}
+
+　　预想的情况是，每隔1000秒执行一次timer(),并且timer()中使用的i值依次为1到5。然而实际情况却是在6000毫秒之后同时执行了timer(),
+并且timer()中使用到的i值全都是6。究其原因，需要解释两部分内容：<br>
+　　首先是出现i值为6的原因，由于当i值为5时，依然满足for循环的条件，所以循环语句会再执行一次，而i++就使得最后的i值为6；
+其次，为何不是使用的1到5，因为for循环执行完毕只是几微秒的时间，而按照预想最早执行的timer()也会在1000毫秒之后执行，此时i全都变成了6，
+所以最后延时器中的函数全都使用的是6。<br>
+　　要解决这个问题，主要方法就是在延时器外边包裹一层IIFE，在每次for循环执行的时候，立即执行一次IIFE并将此时的i值保存在IIFE中，
+以给IIFE中的延时器使用。如下代码：<br>
+
+	for (var i=1;i<=5;i++){
+	  (function(){
+	    var j=i;
+	    setTimeout(function timer(){
+	      console.log(j);
+	    },j*1000);
+	  })();
+	}
+
+　　利用j适时保存了i值，而同时延时器是异步的（也就是说有5个延时器在执行），每个延时器内部的timer()都拥有一个作用域，
+此时体现出了闭包的作用，闭包使得包裹延时器的IIFE能够保持完整，j值得以保存，因此最后timer()使用的j变量分别是1到5。
+此外，利用IIFE的进阶用法，还可以省掉var j=i语句，如下：<br>
+
+	for (var i=1;i<=5;i++){
+	  (function(j){
+	    setTimeout(function timer(){
+	      console.log(j);
+	    },j*1000);
+	  })(i);
+	}
+
+　　直接进行了传参。
+
+　　3.模块化<br>
+　　前端发展到现今，模块化已经是一个主流的概念，而如今的模块主要都是定义一个模块封装函数，使用户可以自定义模块。
+书中介绍了模块封装函数的核心概念，如下代码:（**非常重要的一段代码，完全可以使用到自己以后的代码中，自行建模**）<br>
+
+	var MyModules = (function Manager(){
+	  var modules = {};
+	  function define(name,deps,impl){
+	    for(var i=0;i<deps.length;i++){
+		  dep[i] = modules[deps[i]];
+		}
+		modules[name] = impl.apply(impl,deps);
+	  }
+	  function get(name){
+	    return modules[name];
+	  }
+	  return{
+	    define: define,
+		get:get
+	  };
+	})();
+
+　　简单介绍一下我理解的各段代码的作用：return()返回了MyModules的对象字面量（此处使用了闭包机制），
+以便外部可以使用MyModules的define和get两个函数。define(name,deps,impl)用于自定义模块（就是在该模块内自定义自己需要定义的函数），
+name是函数名（使用define()后成为MyModules对象的属性），deps是自定义函数需要使用的参数组，而impl是定义的函数的具体代码。
+get(name)用于从模块中取得自己想要使用的函数或方法。<br>
+　　以上，关于模块的具体使用，在书中有实例讲解了具体如何运用，建议看书进行了解。
+
